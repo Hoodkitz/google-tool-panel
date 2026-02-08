@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schema.tauri.app/config/2.0.0",
+  "productName": "Nexus Control",
+  "version": "1.0.0",
+  "identifier": "com.nexuscontrol.app",
+  "build": {
+    "beforeDevCommand": "bun run dev",
+    "devUrl": "http://localhost:3000",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../.next/standalone"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "title": "Nexus Control - AI Integration Hub",
+        "width": 1400,
+        "height": 900,
+        "minWidth": 1024,
+        "minHeight": 768,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true,
+        "decorations": true,
+        "transparent": false,
+        "alwaysOnTop": false,
+        "skipTaskbar": false
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["**"]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["msi", "nsis"],
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "publisher": "Nexus Control Team",
+    "copyright": "Copyright © 2025 Nexus Control Team",
+    "category": "Productivity",
+    "shortDescription": "AI-Powered Integration Hub for VPN, Multi-LLM, and Self-Improvement",
+    "longDescription": "Nexus Control is a comprehensive AI-powered integration hub that allows you to control VPN connections, manage multiple LLM services, integrate with Google Apps, and automate self-improvement tasks from a single dashboard.",
+    "macOS": {
+      "entitlements": null,
+      "exceptionDomain": "",
+      "frameworks": [],
+      "providerShortName": null,
+      "signingIdentity": null
+    },
+    "windows": {
+      "certificateThumbprint": null,
+      "digestAlgorithm": "sha256",
+      "timestampUrl": ""
+    },
+    "fileAssociations": [
+      {
+        "ext": ["nexus"],
+        "name": "Nexus Control Project",
+        "role": "Editor",
+        "mimeType": "application/x-nexus-control"
+      }
+    ],
+    "resources": [
+      ".next/standalone/**"
+    ]
+  },
+  "plugins": {
+    "updater": {
+      "active": false,
+      "endpoints": [],
+      "dialog": true,
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQyRDU5QjZGNTI3RTI2QjEKUldYRk9UUTZCUjRrQlRZYmRVSEh0RklqQ0pFb0RzLzVlSkh0aDBCS3VpYllERlRvSkRFSlRTCi0tLS0tLUJFR0lOIHB1YmxpYyBrZXkgYmxvY2stc2lnbmF0dXJlLS0tLS0KUllLZFlsVURkZ0hSZE9sVXJxakJhVjBwWUQ5N2ZDREs5Y1J1UzdWRHBuSTJ4WVB4ZjdrWjgKRVNPSzJPVitWZTBUUzJGZFlLT3ZONm5tRkZuWmN5MStFZ3FqZUJITjlJNklNaGZrUzRLdEhQa0k0S2wKLS0tLS0tRU5EIHB1YmxpYyBrZXkgYmxvY2stc2lnbmF0dXJlLS0tLS0K"
+    }
+  }
+}

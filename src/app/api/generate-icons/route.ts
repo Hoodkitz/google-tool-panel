@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error('Icon generation error:', error)
     return NextResponse.json(
-      { error: 'Failed to generate icons', details: error.message },
+      { error: 'Failed to generate icons', details: (error as Error).message },
       { status: 500 }
     )
   }

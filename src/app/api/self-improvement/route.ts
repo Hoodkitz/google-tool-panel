@@ -183,7 +183,7 @@ async function runAutoImprovement() {
   // Führt mehrere Aufgaben automatisch aus
   console.log('Starte autonome Selbstverbesserung...')
   
-  const results = []
+  const results: Array<{ task: unknown; result: unknown }> = []
   const tasksToRun = SELF_IMPROVEMENT_TASKS.slice(0, 3) // Führe die ersten 3 Aufgaben aus
 
   for (const task of tasksToRun) {
